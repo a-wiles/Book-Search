@@ -24,14 +24,14 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-// mongoose.connect(
-//   process.env.MONGODB_URI || 'mongodb://localhost:27017/obscure-castle-14618',
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/obscure-castle-14618',
 
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   }
-// );
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build/index.html'));
