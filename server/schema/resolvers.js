@@ -20,6 +20,7 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, args) => {
+        console.log(args)
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -46,7 +47,7 @@ const resolvers = {
         const savedBook = await User.findOneAndUpdate(
             {_id: context.user_id },
             { $push: { savedBooks: input}},
-            { new: true, runValidagtors: true}
+            { new: true, runValidators: true}
         );
         return savedBook;
       }
